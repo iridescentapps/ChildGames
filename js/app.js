@@ -31,7 +31,8 @@
         }*/
         
         var elem=document.createElement('p');
-        elem.innerHTML = "&#x"+emojis[selectedEmoji]+";";
+       // elem.innerHTML = "&#"+emojis[selectedEmoji]+";";
+        elem.innerHTML = "./svg/" + emojis[selectedEmoji]+".svg";
         var value = elem.innerHTML;
         
          for(var i=0;i<numOfTimes;i++){
