@@ -24,19 +24,22 @@
     function getEmoji(numOfTimes){
         
         var selectedEmoji = Math.floor( getRandomArbitrary(0,emojis.length));
-        var finalSvg="<span>";
+        var finalSvg="<span class="+"\""+"logo"+"\""+">";
         
         /*for(var i=0;i<numOfTimes;i++){
             finalSvg = finalSvg+ '<p>&x#' + emojis[selectedEmoji]+"</p>";
         }*/
         
-        var elem=document.createElement('p');
+       // var elem=document.createElement('img');
        // elem.innerHTML = "&#"+emojis[selectedEmoji]+";";
-        elem.innerHTML = "./svg/" + emojis[selectedEmoji]+".svg";
-        var value = elem.innerHTML;
+       var src = "./svg/" + emojis[selectedEmoji]+".svg";
+       var val = "<img src=" +"'"+src+"'/>";
+       // elem.setAttribute("src",src)
+        
+       // var value = elem.innerHTML;
         
          for(var i=0;i<numOfTimes;i++){
-            finalSvg = finalSvg+ '<p>' + value+"</p>";
+            finalSvg = finalSvg+ val;
         }
         
         
