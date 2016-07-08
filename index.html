@@ -3,15 +3,19 @@
     <head>
         <meta charset="utf-8">
         <title>Hello World</title>
+        <link rel="stylesheet" href="./css/app.css">
+        <script type="text/javascript" src="./js/app.js"></script>
     </head>
+     
+    
     <body>
-        <h1>Hello World</h1>
-        <p>
-            Raj is here.
-        </p>
+        
+        <h1>Lets Count!!</h1>
+        <div id="content" ><input id="startButton" value="START" type="button" onclick="onStart()"/></div>
+        <div id="value"></div>
+        <div id="navButtons" class="hideClass"><button type="button" onclick="onBack()" >Back</button><button type="button" onclick="onNext()" >Next</button> </div>
+        <div id="message"></div>
     </body>
-    <div id="content" ></div>
-    <div id="value"></div>
-    <link rel="stylesheet" href="./css/app.css">
-    <script type="text/javascript" src="./js/app.js"></script>
+    
+   
 </html>

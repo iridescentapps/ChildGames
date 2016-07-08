@@ -20,3 +20,11 @@
   width: 100% !important;
   height: auto !important;
 }
+
+.hideClass{
+  visibility:hidden;
+}
+
+.displayClass{
+  visibility:visible;
+}
