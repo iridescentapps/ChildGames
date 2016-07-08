@@ -30,7 +30,7 @@ function getSoundPath(audioName){
 
 function getSoundTag(audioName){
     var path = getSoundPath(audioName);
-    var audioTag = "<audio autoplay><source src=\""+path+"\" ></audio>"
+    var audioTag = "<audio autoplay><source src=\""+path+"\" type=\"audio/mpeg\" /></audio>"
    // var audio = new Media(path);
     return audioTag;
     
