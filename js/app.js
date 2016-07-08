@@ -20,10 +20,19 @@ function getEmoji(emojis, numOfTimes) {
 
 }
 
-function getSound(count){
-    var path = "./sounds/"+count+".mp3";
-    var audio = new Audio(path);
-    return audio;
+function getSoundPath(audioName){
+    var path = "./sounds/"+audioName+".mp3";
+    //var audio = new Media(path);
+   // return audio;
+   return path;
+    
+}
+
+function getSoundTag(audioName){
+    var path = getSoundPath(audioName);
+    var audioTag = "<audio autoplay><source src=\""+path+"\" ></audio>"
+   // var audio = new Media(path);
+    return audioTag;
     
 }
 
@@ -40,14 +49,15 @@ function setContent(count) {
     // var numberOfTimes = Math.floor(getRandomArbitrary(1,11));
     document.getElementById("content").innerHTML = getEmoji(emojis, count);
     document.getElementById("value").innerHTML = count;
-    var audio = getSound(count);
-    audio.play();
+    var audio = getSoundTag(count);
+    document.getElementById("audio").innerHTML =audio;
+    //audio.play();
 
 }
 
 function onStart() {
-    var audio = new Audio('./sounds/start.mp3');
-    audio.play();
+    var audio = getSoundTag("start");
+     document.getElementById("audio").innerHTML =audio;
     var delay = 3700;
     setTimeout(function() {
    document.getElementById("navButtons").setAttribute("class", "displayClass");
