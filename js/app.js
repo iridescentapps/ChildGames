@@ -30,9 +30,10 @@ function getSoundPath(audioName){
 
 function getSoundTag(audioName){
     var path = getSoundPath(audioName);
-    var audioTag = "<audio autoplay><source src=\""+path+"\" type=\"audio/mpeg\" /></audio>"
-   // var audio = new Media(path);
-    return audioTag;
+  //  var audioTag = "<audio autoplay><source src=\""+path+"\" type=\"audio/mpeg\" /></audio>"
+    var audio = new Audio(path);
+    //return audioTag;
+    return audio;
     
 }
 
@@ -50,27 +51,54 @@ function setContent(count) {
     document.getElementById("content").innerHTML = getEmoji(emojis, count);
     document.getElementById("value").innerHTML = count;
     var audio = getSoundTag(count);
-    document.getElementById("audio").innerHTML =audio;
-    //audio.play();
+   // document.getElementById("audio").innerHTML =audio;
+    audio.play();
 
 }
 
 function onStart() {
     var audio = getSoundTag("start");
-     document.getElementById("audio").innerHTML =audio;
-    var delay = 3700;
+     //document.getElementById("audio").innerHTML =audio;
+     audio.play();
+    var delay = 3300;
     setTimeout(function() {
    document.getElementById("navButtons").setAttribute("class", "displayClass");
-    document.getElementById("startButton").setAttribute("hidden", "true");
+   document.getElementById("navButtons").setAttribute("class", "displayClass");
+   document.getElementById("homeDiv").setAttribute("class", "displayClass");
+    document.getElementById("homeButtons").setAttribute("class", "hideClass")
+    this.countAhead = 1;
+    setContent(this.countAhead);
+}, delay);
+}
+
+function onTest(){
+   /* var audio = getSoundTag("start");
+     document.getElementById("audio").innerHTML =audio;*/
+    var delay = 3300;
+    setTimeout(function() {
+   document.getElementById("navButtons").setAttribute("class", "hideClass");
+   document.getElementById("moreTest").setAttribute("class", "displayClass");
+   document.getElementById("homeDiv").setAttribute("class", "displayClass");
+   document.getElementById("homeButtons").setAttribute("class", "hideClass")
     
     this.countAhead = 1;
     setContent(this.countAhead);
 }, delay);
-   
-
-
 }
 
+function onMore(){
+    
+}
+
+function onHome(){
+    document.getElementById("navButtons").setAttribute("class", "hideClass");
+   document.getElementById("moreTest").setAttribute("class", "hideClass");
+   document.getElementById("homeDiv").setAttribute("class", "hideClass");
+   document.getElementById("homeButtons").setAttribute("class", "displayClass")
+    document.getElementById("content").innerHTML = "";
+    document.getElementById("value").innerHTML = "";
+    this.countAhead = 0;
+}
 function onNext() {
     if (this.countAhead < 10) {
         this.countAhead++;
