@@ -56,6 +56,19 @@ function setContent(count) {
 
 }
 
+function setTestContent() {
+     var testCount = Math.floor(getRandomArbitrary(1,11));
+    document.addEventListener('deviceready', phonegapinit, false);
+    var emojis = ["1f951", "1f98b", "1f955", "1f921", "1f920", "1f95b", "1f95e"];
+    // var numberOfTimes = Math.floor(getRandomArbitrary(1,11));
+    document.getElementById("content").innerHTML = getEmoji(emojis, testCount);
+    document.getElementById("value").innerHTML = "";
+  //  var audio = getSoundTag(count);
+   // document.getElementById("audio").innerHTML =audio;
+   // audio.play();
+
+}
+
 function onStart() {
     var audio = getSoundTag("start");
      //document.getElementById("audio").innerHTML =audio;
@@ -82,12 +95,12 @@ function onTest(){
    document.getElementById("homeButtons").setAttribute("class", "hideClass")
     
     this.countAhead = 1;
-    setContent(this.countAhead);
+    setTestContent();
 }, delay);
 }
 
 function onMore(){
-    
+    setTestContent();
 }
 
 function onHome(){
