@@ -1,3 +1,29 @@
+
+html,body{
+   height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+      /* fallback */
+  background-color: #d0dcff;
+
+  /* Safari 4-5, Chrome 1-9 */
+  background: -webkit-gradient(linear, from(#d0dcff), to(#e4efee)) no-repeat;
+
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(top, #d0dcff, #e4efee) no-repeat;
+
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(top, #d0dcff, #e4efee) no-repeat;
+
+  /* IE 10 */
+  background: -ms-linear-gradient(top, #d0dcff, #e4efee) no-repeat;
+
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #d0dcff, #e4efee) no-repeat;
+}
+
+
  .logo {
         width: 40px;
         height: 40px;
@@ -20,6 +46,7 @@
   width: 100% !important;
   height: auto !important;
 }
+
 
 .hideClass{
   visibility:hidden;
