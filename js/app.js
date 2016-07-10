@@ -42,7 +42,7 @@ function phonegapinit() {
 }
 
 function setContent(count) {
-    document.getElementById("value").setAttribute('class','floatRight');
+    document.getElementById("value").setAttribute('class',"floatRight");
     if (count === undefined) {
         count = 0;
     }
