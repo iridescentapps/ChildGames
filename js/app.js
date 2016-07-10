@@ -42,6 +42,7 @@ function phonegapinit() {
 }
 
 function setContent(count) {
+    document.getElementById("value").setAttribute('class','floatRight');
     if (count === undefined) {
         count = 0;
     }
@@ -107,11 +108,15 @@ function createOptions(correctAnswer) {
 
     buttonCorrect.innerHTML = correctAnswer;
     buttonCorrect.setAttribute('onclick', 'onCorrectAns()');
+    buttonCorrect.setAttribute('class','btn-class');
+  
     var wrongAnswers = getWrongAnswers(correctAnswer);
     buttonWrong1.innerHTML = wrongAnswers[0];
     buttonWrong1.setAttribute('onclick', 'onWrongAns()');
+    buttonWrong1.setAttribute('class','btn-class');
     buttonWrong2.innerHTML= wrongAnswers[1];
     buttonWrong2.setAttribute('onclick', 'onWrongAns()');
+    buttonWrong2.setAttribute('class','btn-class');
 
 
     var btnArray = [buttonCorrect, buttonWrong1, buttonWrong2];
@@ -129,12 +134,13 @@ function onCorrectAns() {
 }
 
 function onWrongAns() {
-    document.getElementById("answer").innerHTML = "Oops!! Wrong Answer. Try again/.";
+    document.getElementById("answer").innerHTML = "Oops!! Wrong Answer. Try again.";
     //document.getElementById("moreTest").setAttribute("class", "displayClass");
 
 }
 
 function setTestContent() {
+    document.getElementById("value").setAttribute('class','floatNone');
     var testCount = Math.floor(getRandomArbitrary(1, 11));
     document.addEventListener('deviceready', phonegapinit, false);
     var emojis = ["1f951", "1f98b", "1f955", "1f921", "1f920", "1f95b", "1f95e"];
@@ -191,6 +197,7 @@ function onHome() {
     document.getElementById("content").innerHTML = "";
     document.getElementById("value").innerHTML = "";
     document.getElementById("answer").innerHTML ="";
+    document.getElementById("message").innerHTML="";
     this.countAhead = 0;
 }
 

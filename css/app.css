@@ -48,6 +48,11 @@ html,body{
 }
 
 
+.inlineFlex{
+  /* Prevent vertical gaps */
+  display: inline-flex; 
+}
+
 .hideClass{
   visibility:hidden;
 }
@@ -55,3 +60,42 @@ html,body{
 .displayClass{
   visibility:visible;
 }
+
+.floatRight{
+  float: right;
+  font-family: sans-serif;
+  font-size: x-large;
+  font-weight: bolder;
+}
+.floatNone{
+  float: none;
+}
+
+.btn-class{
+ display: inline-block;
+ border:1px solid #C9AE34;
+ color: #705D07;
+ border-radius: 3px 3px 3px 3px;
+ -webkit-border-radius: 3px 3px 3px 3px;
+ -moz-border-radius: 3px 3px 3px 3px;
+ font-family: Comic Sans MS;
+ width: auto;
+ height: auto;
+ font-size: 16px;
+ padding: 10px 40px;
+ box-shadow: inset 0 1px 0 0 #FFF6CE,inset 0 -1px 0 0 #E3C852,inset 0 0 0 1px #FCE88D,0 2px 4px 0 #D4D4D4;
+ -moz-box-shadow: inset 0 1px 0 0 #FFF6CE,inset 0 -1px 0 0 #E3C852,inset 0 0 0 1px #FCE88D,0 2px 4px 0 #D4D4D4;
+ -webkit-box-shadow: inset 0 1px 0 0 #FFF6CE,inset 0 -1px 0 0 #E3C852,inset 0 0 0 1px #FCE88D,0 2px 4px 0 #D4D4D4;
+ text-shadow: 0 1px 0 #FFFFFF;
+ background-image: linear-gradient(to top, #FCC647, #FCD928);
+ background-color: #FCCD6F;
+}
+.btn-class:hover, .btn-class:active{
+ border:1px solid #967D09;
+ color: #705D07;
+ box-shadow: inset 0 1px 0 0 #FFF6CE,inset 0 -1px 0 0 #E3C852,inset 0 0 0 1px #FCE88D;
+ -moz-box-shadow: inset 0 1px 0 0 #FFF6CE,inset 0 -1px 0 0 #E3C852,inset 0 0 0 1px #FCE88D;
+ -webkit-box-shadow: inset 0 1px 0 0 #FFF6CE,inset 0 -1px 0 0 #E3C852,inset 0 0 0 1px #FCE88D;
+ background-color: #FCDF5B;
+}
+
