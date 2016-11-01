@@ -1,36 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Lets Play</title>
-    <link rel="stylesheet" href="./css/app.css">
-    <!--<script type="text/javascript" charset="utf-8" src="cordova.js"></script>-->
+    <!--Import Google Icon Font-->
+   <!-- <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="./css/materialize.min.css" media="screen,projection" />
+     <link type="text/css" rel="stylesheet" href="./css/app.css" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="./js/materialize.min.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>
 </head>
 
-
-<body>
-    <h1>Lets Count!!</h1>
-    <div id="divBody">
-        <div id="center">
-            <div id="homeButtons">
-                <input id="startButton" value="START" type="button" onclick="onStart()" class="btn-class" />
-                <input id="testButton" value="TEST" type="button" onclick="onTest()" class="btn-class" />
-            </div>
-            <div id="baseContent" class="inlineFlex">
-                <div id="content"></div>
-                <div id="value"></div>
-            </div>
-            <div id="answer"></div>
-            <div id="message"></div>
-            <div id="navButtons" class="hideClass"><button type="button" onclick="onBack()" class="btn-class">Back</button><button type="button" onclick="onNext()" class="btn-class">Next</button> </div>
-            <div id="moreTest" class="hideClass"><button type="button" onclick="onMore()" class="btn-class">More</button> </div>
-            <div id="audio"></div>
+<body class="blue lighten-2">
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo left">Let's Count</a>
+            <ul class="right">
+                <li class="active"><a  onclick="onHome()">Home</a></li>
+            </ul>
         </div>
-        <div id="homeDiv" class="hideClass"><button type="button" onclick="onHome()" class="btn-class">home</button></div>
-    </div>
-</body>
+    </nav>
 
+
+
+
+    <!--Import jQuery before materialize.js-->
+    <div class="row">
+
+        <div class="col s12">
+            <div class="card-panel orange darken-2 valign center-align ">
+                <!-- Start page -->
+                <div id="startPage" class="center-align" >
+                    <div class="row">
+                        <div class="col s12 grid-example">
+                            <h5>Let's Count</h5>
+                        </div>
+                        <div class="col s6 grid-example">
+                            <a class="waves-effect waves-light btn right" onclick="onStart()" href="#countPage">Start</a>
+                        </div>
+                        <div class="col s6 grid-example">
+                            <a class="waves-effect waves-light btn left" onclick="onTest()" href="#testPage">Test</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="countPage" class="hideClass">
+                    <div class="row">
+                        <div class="col s11 grid-example intialTextAlign">
+                            <div id="content"></div>
+                            
+                        </div>
+                        <div id="value" class="col s1 grid-example"></div>
+                        <div id="countBack" class="col s6 grid-example">
+                            <a class="waves-effect waves-light btn right" onclick="onBack()"><<</a>
+                        </div>
+                        <div id="countNext" class="col s6 grid-example">
+                            <a class="waves-effect waves-light btn left" onclick="onNext()">>></a>
+                        </div>
+                    </div>
+                </div>
+                <div id="testPage" class="hideClass">
+                    <div class="row">
+                        <div class="col s10 grid-example intialTextAlign">
+                            <div id="contentTest"></div>
+                            
+                        </div>
+                        <div id="valueTest" class="col s2 grid-example"></div>
+                        <div id="btnMoreTest" class="col s6 grid-example">
+                            <a class="waves-effect waves-light btn right" onclick="onMore()">More</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
 
 </html>
