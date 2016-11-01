@@ -27,7 +27,7 @@ function getEmoji(emojis, numOfTimes) {
     var selectedEmoji = Math.floor(this.getRandomArbitrary(0, emojis.length));
     var finalSvg = "<div class=" + "\"" + "row" + "\"" + ">";
     var src = "./svg/" + emojis[selectedEmoji] + ".svg";
-    var val = "<div class=" + "\"" + "col s2" + "\"" + ">" + "<img src=" + "'" + src + "'/>" + "</div>";
+    var val = "<div class=" + "\"" + "col s4 m2 " + "\"" + ">" + "<img src=" + "'" + src + "'/>" + "</div>";
     for (var i = 0; i < numOfTimes; i++) {
         finalSvg = finalSvg + val;
     }
