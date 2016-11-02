@@ -1,5 +1,3 @@
-
-
 var count = 0;
 var countAhead = 0;
 var countBack = 0;
@@ -66,7 +64,7 @@ function setContent(count) {
     var emojis = ["1f951", "1f98b", "1f955", "1f921", "1f920", "1f95b", "1f95e"];
     // var numberOfTimes = Math.floor(getRandomArbitrary(1,11));
     document.getElementById("content").innerHTML = getEmoji(emojis, count);
-    document.getElementById("value").innerHTML = "<h3>"+ count +"</h3>";
+    document.getElementById("value").innerHTML = "<h3>" + count + "</h3>";
     var audio = getSoundTag(count);
     // document.getElementById("audio").innerHTML =audio;
     audio.play();
@@ -124,15 +122,15 @@ function createOptions1(correctAnswer) {
 
     buttonCorrect.innerHTML = correctAnswer;
     buttonCorrect.setAttribute('onclick', 'onCorrectAns()');
-    buttonCorrect.setAttribute('class','btn-class');
-  
+    buttonCorrect.setAttribute('class', 'btn-class');
+
     var wrongAnswers = getWrongAnswers(correctAnswer);
     buttonWrong1.innerHTML = wrongAnswers[0];
     buttonWrong1.setAttribute('onclick', 'onWrongAns()');
-    buttonWrong1.setAttribute('class','btn-class');
-    buttonWrong2.innerHTML= wrongAnswers[1];
+    buttonWrong1.setAttribute('class', 'btn-class');
+    buttonWrong2.innerHTML = wrongAnswers[1];
     buttonWrong2.setAttribute('onclick', 'onWrongAns()');
-    buttonWrong2.setAttribute('class','btn-class');
+    buttonWrong2.setAttribute('class', 'btn-class');
 
 
     var btnArray = [buttonCorrect, buttonWrong1, buttonWrong2];
@@ -146,25 +144,26 @@ function createOptions1(correctAnswer) {
 function createOptions(correctAnswer) {
 
     var finalDiv = document.createElement('div');
-    finalDiv.setAttribute('class','row');
+    finalDiv.setAttribute('class', 'row');
     var buttonCorrect = document.createElement('a');
     var buttonWrong1 = document.createElement('a');
     var buttonWrong2 = document.createElement('a');
 
     buttonCorrect.innerHTML = correctAnswer;
-    buttonCorrect.setAttribute('onclick', 'onCorrectAns()');
-    buttonCorrect.setAttribute('class','waves-effect waves-light btn  left');
-  
+    var correctAnswerText = "onCorrectAns(" + correctAnswer + ")";
+    buttonCorrect.setAttribute('onclick', correctAnswerText);
+    buttonCorrect.setAttribute('class', 'waves-effect waves-light btnsmall  left');
+
     var wrongAnswers = getWrongAnswers(correctAnswer);
     buttonWrong1.innerHTML = wrongAnswers[0];
     buttonWrong1.setAttribute('onclick', 'onWrongAns()');
-    buttonWrong1.setAttribute('class','waves-effect waves-light btn left');
-    buttonWrong2.innerHTML= wrongAnswers[1];
+    buttonWrong1.setAttribute('class', 'waves-effect waves-light btnsmall left');
+    buttonWrong2.innerHTML = wrongAnswers[1];
     buttonWrong2.setAttribute('onclick', 'onWrongAns()');
-    buttonWrong2.setAttribute('class','waves-effect waves-light btn left');
+    buttonWrong2.setAttribute('class', 'waves-effect waves-light btnsmall left');
 
-   var container =  document.createElement('div')
-   container.setAttribute('class','col s12');
+    var container = document.createElement('div')
+    container.setAttribute('class', 'col s10');
 
     var btnArray = [buttonCorrect, buttonWrong1, buttonWrong2];
     btnArray = shuffleArray(btnArray);
@@ -175,22 +174,30 @@ function createOptions(correctAnswer) {
     return finalDiv.innerHTML;
 }
 
-function onCorrectAns() {
- Materialize.toast('Horray correct :) !', 3000, 'rounded')
-   // document.getElementById("answer").innerHTML = "Hooray !! Correct. Click on more for new number.";
-    //document.getElementById("moreTest").setAttribute("class", "displayClass");
+function onCorrectAns(val) {
+
+    var audio = getSoundTag("Yes-Small");
+    // document.getElementById("audio").innerHTML =audio;
+    audio.play();
+    audio = getSoundTag(val);
+    // document.getElementById("audio").innerHTML =audio;
+    audio.play();
+
+    Materialize.toast('Horray correct :) !', 3000, 'rounded')
+        // document.getElementById("answer").innerHTML = "Hooray !! Correct. Click on more for new number.";
+        //document.getElementById("moreTest").setAttribute("class", "displayClass");
 
 }
 
 function onWrongAns() {
- Materialize.toast('Oops wrong :(!', 3000, 'rounded')
-   // document.getElementById("answer").innerHTML = "Oops!! Wrong Answer. Try again.";
-    //document.getElementById("moreTest").setAttribute("class", "displayClass");
+    Materialize.toast('Oops wrong :(!', 3000, 'rounded')
+        // document.getElementById("answer").innerHTML = "Oops!! Wrong Answer. Try again.";
+        //document.getElementById("moreTest").setAttribute("class", "displayClass");
 
 }
 
 function setTestContent() {
-    document.getElementById("value").setAttribute('class','floatNone');
+    document.getElementById("value").setAttribute('class', 'floatNone');
     var testCount = Math.floor(getRandomArbitrary(1, 11));
     document.addEventListener('deviceready', phonegapinit, false);
     var emojis = ["1f951", "1f98b", "1f955", "1f921", "1f920", "1f95b", "1f95e"];
@@ -209,7 +216,7 @@ function onStart() {
     //audio.play();
     var delay = 0;
     setTimeout(function() {
-     
+
         /*document.getElementById("navButtons").setAttribute("class", "displayClass");
         document.getElementById("navButtons").setAttribute("class", "displayClass");
         document.getElementById("homeDiv").setAttribute("class", "displayClass");
@@ -219,7 +226,7 @@ function onStart() {
         $('#testPage').addClass('hideClass').removeClass('displayClass');
         $('#countPage').addClass('displayClass').removeClass('hideClass');
         $('#countBack').addClass('invisibleClass').removeClass('visibleClass');
-        
+
         this.countAhead = 1;
         setContent(this.countAhead);
     }, 0);
@@ -230,11 +237,11 @@ function onTest() {
       document.getElementById("audio").innerHTML =audio;*/
     var delay = 0;
     setTimeout(function() {
-      /*  document.getElementById("navButtons").setAttribute("class", "hideClass");
-        document.getElementById("moreTest").setAttribute("class", "displayClass");
-        document.getElementById("homeDiv").setAttribute("class", "displayClass");
-        document.getElementById("homeButtons").setAttribute("class", "hideClass")*/
-           $('#startPage').addClass('hideClass').removeClass('displayClass');
+        /*  document.getElementById("navButtons").setAttribute("class", "hideClass");
+          document.getElementById("moreTest").setAttribute("class", "displayClass");
+          document.getElementById("homeDiv").setAttribute("class", "displayClass");
+          document.getElementById("homeButtons").setAttribute("class", "hideClass")*/
+        $('#startPage').addClass('hideClass').removeClass('displayClass');
         $('#countPage').addClass('hideClass').removeClass('displayClass');
         $('#testPage').addClass('displayClass').removeClass('hideClass');
 
@@ -246,7 +253,7 @@ function onTest() {
 function onMore() {
     //document.getElementById("answer").innerHTML ="";
     setTestContent();
-    
+
 }
 
 function onHome() {
@@ -261,11 +268,11 @@ function onNext() {
     if (this.countAhead < 10) {
         this.countAhead++;
         setContent(this.countAhead);
-       // document.getElementById("message").innerHTML = "";
-       $('#countBack').addClass('visibleClass').removeClass('invisibleClass');
-       if(this.countAhead == 10){
-         $('#countNext').addClass('invisibleClass').removeClass('visibleClass');
-       }
+        // document.getElementById("message").innerHTML = "";
+        $('#countBack').addClass('visibleClass').removeClass('invisibleClass');
+        if (this.countAhead == 10) {
+            $('#countNext').addClass('invisibleClass').removeClass('visibleClass');
+        }
     }
 
 }
@@ -275,8 +282,8 @@ function onBack() {
         this.countAhead--;
         setContent(this.countAhead);
         $('#countNext').addClass('visibleClass').removeClass('invisibleClass');
-        if(this.countAhead == 1){
-         $('#countBack').addClass('invisibleClass').removeClass('visibleClass');
+        if (this.countAhead == 1) {
+            $('#countBack').addClass('invisibleClass').removeClass('visibleClass');
         }
     }
 

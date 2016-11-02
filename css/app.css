@@ -22,3 +22,15 @@
   text-align: initial;
 }
 
+.btnsmall {
+  border: none;
+  border-radius: 2px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 .5rem;
+  margin-top: .5rem;
+  text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+}
