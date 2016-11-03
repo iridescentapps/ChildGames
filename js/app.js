@@ -152,15 +152,15 @@ function createOptions(correctAnswer) {
     buttonCorrect.innerHTML = correctAnswer;
     var correctAnswerText = "onCorrectAns(" + correctAnswer + ")";
     buttonCorrect.setAttribute('onclick', correctAnswerText);
-    buttonCorrect.setAttribute('class', 'waves-effect waves-light btnsmall  left');
+    buttonCorrect.setAttribute('class', 'waves-effect waves-light btn-floating');
 
     var wrongAnswers = getWrongAnswers(correctAnswer);
     buttonWrong1.innerHTML = wrongAnswers[0];
     buttonWrong1.setAttribute('onclick', 'onWrongAns()');
-    buttonWrong1.setAttribute('class', 'waves-effect waves-light btnsmall left');
+    buttonWrong1.setAttribute('class', 'waves-effect waves-light btn-floating');
     buttonWrong2.innerHTML = wrongAnswers[1];
     buttonWrong2.setAttribute('onclick', 'onWrongAns()');
-    buttonWrong2.setAttribute('class', 'waves-effect waves-light btnsmall left');
+    buttonWrong2.setAttribute('class', 'waves-effect waves-light btn-floating');
 
     var container = document.createElement('div')
     container.setAttribute('class', 'col s10');
@@ -179,9 +179,21 @@ function onCorrectAns(val) {
     var audio = getSoundTag("Yes-Small");
     // document.getElementById("audio").innerHTML =audio;
     audio.play();
-    audio = getSoundTag(val);
+    
+    var delay=500; //1 second
+
+setTimeout(function() {
+     var audio = getSoundTag(val);
     // document.getElementById("audio").innerHTML =audio;
     audio.play();
+  //your code to be executed after 1 second
+}, delay);
+    /*audio = getSoundTag("blank");
+    // document.getElementById("audio").innerHTML =audio;
+    audio.play();
+    audio = getSoundTag(val);
+    // document.getElementById("audio").innerHTML =audio;
+    audio.play();*/
 
     Materialize.toast('Horray correct :) !', 3000, 'rounded')
         // document.getElementById("answer").innerHTML = "Hooray !! Correct. Click on more for new number.";
